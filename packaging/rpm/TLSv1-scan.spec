@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           TLSv1-scan
 Version:        1.0
 Release:        1%{?dist}
