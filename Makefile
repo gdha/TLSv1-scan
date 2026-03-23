@@ -5,7 +5,7 @@ VERSION = 1.0
 SPECFILE  = packaging/rpm/$(TARGET).spec
 DEBDIR    = packaging/debian
 DISTDIR   = dist
-PKGSRCS   = $(TARGET).c $(TARGET).sh Makefile LICENSE README.md
+PKGSRCS   = $(TARGET).c Makefile LICENSE README.md
 
 all: $(TARGET)
 
