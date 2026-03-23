@@ -11,7 +11,7 @@ Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
-BuildRequires:  rubygem-ronn
+BuildRequires:  rubygem-ronn-ng
 
 Requires:       sslscan
 Requires:       iproute
