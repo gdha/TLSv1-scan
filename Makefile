@@ -13,12 +13,13 @@ $(TARGET): TLSv1-scan.c
 	$(CC) $(CFLAGS) -o $(TARGET) TLSv1-scan.c
 
 install: $(TARGET)
-	install -m 755 $(TARGET) /usr/local/sbin/$(TARGET)
+	install -m 755 $(TARGET) /usr/sbin/$(TARGET)
 
 clean:
 	rm -f $(TARGET)
 	rm -rf $(DISTDIR)/rpmbuild
 	rm -rf $(DISTDIR)/debbuild
+	rm -f dist/$(TARGET)-$(VERSION).tar.gz
 
 rpm: $(TARGET)
 	mkdir -p $(DISTDIR)/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
