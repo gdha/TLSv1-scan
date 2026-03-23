@@ -11,7 +11,11 @@ Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
+%if 0%{?rhel} == 8
+BuildRequires:  rubygem-ronn
+%else
 BuildRequires:  rubygem-ronn-ng
+%endif
 
 Requires:       sslscan
 Requires:       iproute
