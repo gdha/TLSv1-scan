@@ -30,7 +30,6 @@ for any service where those deprecated protocol versions are enabled.
 
 %install
 install -D -m 755 %{name} %{buildroot}%{_sbindir}/%{name}
-install -D -m 755 %{name}.sh %{buildroot}%{_sbindir}/%{name}.sh
 
 %files
 %license LICENSE
