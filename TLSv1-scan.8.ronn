@@ -1,0 +1,47 @@
+TLSv1-scan(8) -- scan local system for services using deprecated TLSv1.0 or TLSv1.1
+=====================================================================================
+
+## SYNOPSIS
+
+`TLSv1-scan`
+
+## DESCRIPTION
+
+**TLSv1-scan** scans all local TCP listening ports and checks each one for
+TLSv1.0 or TLSv1.1 support using `sslscan(1)`. For any service where those
+deprecated protocol versions are enabled, it reports the owning process by
+querying `ss(8)` and `lsof(8)`.
+
+The program must be run as root.
+
+## DEPENDENCIES
+
+The following tools must be installed and available in `PATH`:
+
+  * `sslscan`:
+    Part of EPEL on RHEL-based systems.
+
+  * `ss`:
+    Part of the `iproute` package.
+
+  * `lsof`:
+    Part of the `lsof` package.
+
+  * `netstat`:
+    Part of the `net-tools` package.
+
+## EXIT STATUS
+
+  * `0`:
+    Success.
+
+  * `1`:
+    The program was not run as root, or a required dependency was not found.
+
+## AUTHOR
+
+Written by Gratien D'haese.
+
+## SEE ALSO
+
+sslscan(1), ss(8), lsof(8), netstat(8)

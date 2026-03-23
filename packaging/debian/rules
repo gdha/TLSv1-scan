@@ -5,7 +5,10 @@
 
 override_dh_auto_build:
 	$(MAKE)
+	$(MAKE) man
 
 override_dh_auto_install:
 	install -D -m 755 TLSv1-scan \
 	    $(CURDIR)/debian/tlsv1-scan/usr/sbin/TLSv1-scan
+	install -D -m 644 TLSv1-scan.8 \
+	    $(CURDIR)/debian/tlsv1-scan/usr/share/man/man8/TLSv1-scan.8
