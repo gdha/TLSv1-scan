@@ -1,0 +1,15 @@
+Source: tlsv1-scan
+Section: net
+Priority: optional
+Maintainer: Gratien D'haese <gratien.dhaese@gmail.com>
+Build-Depends: debhelper-compat (= 13), gcc, make
+Standards-Version: 4.6.0
+Homepage: https://github.com/gdha/TLSv1-scan
+
+Package: tlsv1-scan
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, sslscan, iproute2, lsof, net-tools
+Description: Scan local system for services using deprecated TLSv1.0 or TLSv1.1
+ TLSv1-scan scans all local TCP listening ports and checks each one for
+ TLSv1.0 or TLSv1.1 support using sslscan, then reports the owning process
+ for any service where those deprecated protocol versions are enabled.

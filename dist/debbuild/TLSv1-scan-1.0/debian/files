@@ -1,0 +1,3 @@
+tlsv1-scan-dbgsym_1.0-1_amd64.ddeb debug optional automatic=yes
+tlsv1-scan_1.0-1_amd64.buildinfo net optional
+tlsv1-scan_1.0-1_amd64.deb net optional
