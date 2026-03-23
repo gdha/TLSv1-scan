@@ -59,3 +59,10 @@ TLSv1-scan
 dist/*.rpm
 dist/*.src.rpm
 dist/rpmbuild/
+
+# Debian build artifacts
+dist/*.deb
+dist/*.ddeb
+dist/*.buildinfo
+dist/*.changes
+dist/debbuild/
