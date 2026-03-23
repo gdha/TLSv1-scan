@@ -54,3 +54,8 @@ dkms.conf
 # debug information files
 *.dwo
 TLSv1-scan
+
+# RPM build artifacts
+dist/*.rpm
+dist/*.src.rpm
+dist/rpmbuild/
