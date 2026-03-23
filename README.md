@@ -22,7 +22,7 @@ make
 sudo make install
 ```
 
-This installs the binary to `/usr/local/sbin/TLSv1-scan`.
+This installs the binary to `/usr/sbin/TLSv1-scan`.
 
 ## Usage
 
