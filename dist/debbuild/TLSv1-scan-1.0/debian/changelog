@@ -1,5 +1,0 @@
-tlsv1-scan (1.0-1) unstable; urgency=low
-
-  * Initial Debian package release
-
- -- Gratien D'haese <gratien.dhaese@gmail.com>  Mon, 23 Mar 2026 14:24:52 +0000
