@@ -5,18 +5,26 @@ VERSION = 1.0
 SPECFILE  = packaging/rpm/$(TARGET).spec
 DEBDIR    = packaging/debian
 DISTDIR   = dist
-PKGSRCS   = $(TARGET).c Makefile LICENSE README.md
+MANPAGE   = $(TARGET).8
+PKGSRCS   = $(TARGET).c Makefile LICENSE README.md $(TARGET).8.ronn
 
 all: $(TARGET)
 
 $(TARGET): TLSv1-scan.c
 	$(CC) $(CFLAGS) -o $(TARGET) TLSv1-scan.c
 
-install: $(TARGET)
+man: $(MANPAGE)
+
+$(MANPAGE): $(TARGET).8.ronn
+	ronn --roff $<
+
+install: $(TARGET) man
 	install -m 755 $(TARGET) /usr/sbin/$(TARGET)
+	install -D -m 644 $(MANPAGE) /usr/share/man/man8/$(MANPAGE)
 
 clean:
 	rm -f $(TARGET)
+	rm -f $(MANPAGE)
 	rm -rf $(DISTDIR)/rpmbuild
 	rm -rf $(DISTDIR)/debbuild
 	rm -f dist/$(TARGET)-$(VERSION).tar.gz
@@ -43,4 +51,4 @@ deb:
 	find $(DISTDIR)/debbuild -maxdepth 1 -name '*.deb' \
 	    -exec cp {} $(DISTDIR)/ \;
 
-.PHONY: all install clean rpm deb
+.PHONY: all man install clean rpm deb
