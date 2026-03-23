@@ -11,6 +11,7 @@ Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
+BuildRequires:  pandoc
 
 Requires:       sslscan
 Requires:       iproute
@@ -27,14 +28,17 @@ for any service where those deprecated protocol versions are enabled.
 
 %build
 %make_build
+%make_build man
 
 %install
 install -D -m 755 %{name} %{buildroot}%{_sbindir}/%{name}
+install -D -m 644 docs/%{name}.8 %{buildroot}%{_mandir}/man8/%{name}.8
 
 %files
 %license LICENSE
 %doc README.md
 %{_sbindir}/%{name}
+%{_mandir}/man8/%{name}.8*
 
 %changelog
 * Mon Mar 23 2026 Gratien D'haese <gratien.dhaese@gmail.com> - 1.0-1
