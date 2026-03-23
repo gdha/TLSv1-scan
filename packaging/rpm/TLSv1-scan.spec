@@ -36,7 +36,6 @@ install -D -m 755 %{name}.sh %{buildroot}%{_sbindir}/%{name}.sh
 %license LICENSE
 %doc README.md
 %{_sbindir}/%{name}
-%{_sbindir}/%{name}.sh
 
 %changelog
 * Mon Mar 23 2026 Gratien D'haese <gratien.dhaese@gmail.com> - 1.0-1
