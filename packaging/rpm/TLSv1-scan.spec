@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           TLSv1-scan
-Version:        1.0
+Version:        1.1
 Release:        1%{?dist}
 Summary:        Scan local system for services using deprecated TLSv1.0 or TLSv1.1
 

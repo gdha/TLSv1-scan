@@ -1,7 +1,7 @@
 CC      = gcc
 CFLAGS  = -Wall -Wextra -O2
 TARGET  = TLSv1-scan
-VERSION = 1.0
+VERSION = 1.1
 SPECFILE  = packaging/rpm/$(TARGET).spec
 DEBDIR    = packaging/debian
 DISTDIR   = dist
