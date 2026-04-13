@@ -250,7 +250,7 @@ int main(int argc, char *argv[])
 
         char nmap_cmd[512];
         snprintf(nmap_cmd, sizeof(nmap_cmd),
-                 "nmap --open -p 1-65535 -T4 -- '%s' 2>/dev/null | grep '^[0-9]' | awk -F'/' '{print $1}'",
+                 "nmap --open -p 1-65535 -T4 '%s' 2>/dev/null | grep '^[0-9]' | awk -F'/' '{print $1}'",
                  target_host);
 
         FILE *fp = popen(nmap_cmd, "r");
@@ -274,7 +274,7 @@ int main(int argc, char *argv[])
 
             char sslscan_cmd[512];
             snprintf(sslscan_cmd, sizeof(sslscan_cmd),
-                     "timeout 10 sslscan '%s':%s | grep -E '(TLSv1.0|TLSv1.1)' | grep enable",
+                     "timeout 10 sslscan %s:%s | grep -E '(TLSv1.0|TLSv1.1)' | grep enable",
                      target_host, port);
 
             FILE *scan_fp = popen(sslscan_cmd, "r");
